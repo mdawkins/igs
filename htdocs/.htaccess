@@ -1,0 +1,35 @@
+RewriteEngine on
+
+## rule for siteinfo pages
+RewriteRule ^([a-z]+).html$ index.php?main=$1
+
+## rule for categories cat_id brand
+RewriteRule ^[0-9a-zA-Z\-\&]+/([0-9][0-9][0-9][0-9])$ index.php?cat_id=$1 
+
+## rule for subjects search
+RewriteRule ^subject/([0-9a-zA-Z\-\&]+)$ index.php?search=$1
+
+## rule for artist search
+RewriteRule ^artist/([0-9a-zA-Z\-\&]+)$ index.php?search=$1
+## RewriteRule ^artist/namevalue$ index.php?search=namevalue
+
+## rule for subcategories subcat_id 
+RewriteRule ^[0-9a-zA-Z\-\&]+/[0-9a-zA-Z\-\&]+/([0-9][0-9][0-9][0-9][0-9][0-9])$ index.php?subcat_id=$1 
+
+## rule for subcategories subcat_id  plus startitem
+RewriteRule ^[0-9a-zA-Z\-\&]+/[0-9a-zA-Z\-\&]+/([0-9][0-9][0-9][0-9][0-9][0-9])/startitem([0-9]+)$ index.php?subcat_id=$1&startitem=$2
+
+## rule for product id !!!! the first 3 letters of the SKU have to be CAPITALIZED otherwise it messes with subcat_id startitem
+RewriteRule ^[0-9a-zA-Z\-\&]+/[0-9a-zA-Z\-\&]+/[0-9a-zA-Z\-\&]+/([A-Z][A-Z][A-Z][0-9a-zA-Z]+)$ index.php?sku=$1 
+
+## rule for showall cat_id 
+RewriteRule ^[0-9a-zA-Z\-\&]+/showall/([0-9][0-9][0-9][0-9])$ index.php?showall=$1 
+
+## rule for showall cat_id plus startitem
+RewriteRule ^[0-9a-zA-Z\-\&]+/showall/([0-9][0-9][0-9][0-9])/startitem([0-9]+)$ index.php?showall=$1&startitem=$2
+
+## rule for suject plus startitem
+RewriteRule ^subject/([0-9a-zA-Z\-\&]+)/startitem([0-9]+)$ index.php?search=$1&startitem=$2
+
+## rule for change_qty page
+RewriteRule ^change_qty.html$ change_qty.php

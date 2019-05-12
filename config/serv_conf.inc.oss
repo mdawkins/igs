@@ -1,0 +1,37 @@
+<?php
+
+   $DB_SERVER="localhost";      // Database Server machine
+   #$DB_LOGIN="ossuser";         // Database login 
+   #$DB_PASSWORD="ossuser";      // Database password
+   #$DB="osourceshop";          // Database containing the tables
+   $tablename="cust_info";
+   #$WEBSITE="http://www.osourceshop.com";
+   #$SSLWEBSITE="http://www.osourceshop.com";
+   #$SSLWEBSITE="https://www.osourceshop.com";
+   $DB_LOGIN="igsuser";         // Database login 
+   $DB_PASSWORD="igsuser";      // Database password
+   $DB="intrigue";          // Database containing the tables
+
+   $SITENAME="www.osourceshop.com";
+   $DOMAINNAME="osourceshop.com";
+// need2b done replace variables within edit pages siteinfo file
+   $BUSINESSNAME="Open Source Shop";
+   $BUSINESSCITY='Open City'; 
+   $BUSINESSCOUNTY='Open';
+   $BUSINESSSTATE='Open State';
+   $BUSINESSSTATEABR='OP';
+   $BUSINESSZIP='12345';
+   $SHORTNAME="Open Source Shop";
+   $BUSINESSADDRESS='123 E. Open Ave.<br>P.O. BOX 1234<br>'.$BUSINESSCITY.', '.$BUSINESSSTATEABR.' '.$BUSINESSZIP.'<br>';
+   $BUSINESSMAILADDRESS='P.O. BOX 1234<br>'.$BUSINESSCITY.', '.$BUSINESSSTATEABR.' '.$BUSINESSZIP.'<br>';
+   $BUSINESSPHONE='999.999.9999';
+   $BUSINESSFAX='999.999.9999';
+   $BUSINESSORDERS='1.800.9999.ABCD (9999)';
+
+   $title="Open Source Shop e-commerce";
+
+
+   $orders_email = 'orders@'.$DOMAINNAME;
+   $service_email = 'service@'.$DOMAINNAME;
+
+?>

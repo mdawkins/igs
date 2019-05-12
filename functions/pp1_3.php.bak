@@ -1,0 +1,60 @@
+<?php
+	// display by cols
+	echo '<td><table class=tbl_display><tr>';
+	reset($displayfields["display_order"]);
+	echo '<td class=dark_med align=center width='.$tdwidth.'>';
+	while (list($key, $value)=each($displayfields["display_order"]))
+	{
+		reset($value);
+		while(list($key1,$value1)=each($value))
+		{ 	// *****************************************************
+			// loop through fields, here we're really only checking for images 
+			$imagefound=0;
+        	for ($j=0;$j<$FIELDCNT;$j++)
+			{
+				if (($displayfields[$j]["field_name"] == $value1) && ($displayfields[$j]["image"] == "yes"))
+				{
+					echo '<a class=dark_med href="'.$hrefstr.'" title="Click for details">';
+					if(file_exists($FILE_LOCATION.$dis_item[$i][$displayfields[$j]["field_name"]]))
+						echo '<img src="'.$FILE_LOCATION.$dis_item[$i][$displayfields[$j]["field_name"]].'" ';
+					else	
+						echo '<img src="'.$FILE_LOCATION.'imageunavailable.png"';
+					echo 'height="'.$displayfields[$j]["image_height"].'" width="'.$displayfields[$j]["image_width"].'" name='.$dis_item[$i][$displayfields[$j]["prod_name"]].'alt='.$dis_item[$i][$displayfields[$j]["prod_name"]].' border="0">';
+					echo '</a>';
+					$imagefound=1;
+					break;
+				}
+				else if ($displayfields[$j]["field_name"] == $value1)
+				{
+					if ($value1=="prod_price")
+					echo 'Price $'.$dis_item[$i][$displayfields[$j]["field_name"]];
+					elseif($value1=="ship_cost")
+					echo 'S&amp;H $'.$dis_item[$i][$displayfields[$j]["field_name"]];
+					elseif($value1=="prod_status")
+					{
+						require '../siteinfo/prod_status.php';
+						$dis_item[$i][$displayfields[$j]["field_name"]] = $$dis_item[$i][$displayfields[$j]["field_name"]]	;
+					}				
+					elseif($value1=="prod_name")
+					{
+						echo '<a class=dark_med href="',$hrefstr,'" title="Click for details"><font class="font1">';
+						if(strlen($dis_item[$i][$displayfields[$j]["field_name"]]) > 20)
+							echo substr($dis_item[$i][$displayfields[$j]["field_name"]],0,17).'...';
+						else
+							echo $dis_item[$i][$displayfields[$j]["field_name"]];
+						echo '</a>';
+					}
+					// hard code units for now, just to see how it looks, will clean up later
+				}	
+			}
+			// *****************************************************
+			echo "<br>";
+		}
+	}
+	echo '<br>
+	<table class=tbl_addbutton><tr><td cellpadding=0 cellspacing=0 border=0>
+	<a class=add_button href="change_qty.php?pass_id=',$pass_id,'">Add to Cart</a>
+	</td></tr></table>
+	</td></tr>
+</table></td>';
+?>

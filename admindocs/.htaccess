@@ -1,0 +1,5 @@
+AuthUserFile "/var/www/html/igs/config/htpasswd"
+AuthGroupFile "/dev/null"
+AuthName "Administration Pages"
+AuthType Basic
+Require valid-user
