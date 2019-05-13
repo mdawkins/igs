@@ -85,5 +85,5 @@ if (empty($desc))
 <meta name="rating" content="General">
 <meta name="language" content="en-us">
 <meta name="subject" content="">
-<link rel="stylesheet" type="text/css" href="./default.css.php">
+<link rel="stylesheet" type="text/css" href="/default.css.php">
 </head>
