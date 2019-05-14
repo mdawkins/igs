@@ -12,7 +12,7 @@ while ( $row = $result->fetch_assoc() ) {
 	if ( $rewriteurl == "yes" ) {
 		$cat_link = $WEBSITE.'/'.str_replace(" ","-",$row["cat_name"]).'/'.$row["cat_id"];
 	} else {
-		$cat_link = $WEBSITE."?cat_id=".str_replace(" ","-",$row["cat_id"]); }
+		$cat_link = $WEBSITE."/index.php?cat_id=".str_replace(" ","-",$row["cat_id"]); }
 	if(strlen($row["cat_name"]) > 26 )
 		$cat_name = substr($row["cat_name"],0,24).'...';
 	else

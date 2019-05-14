@@ -39,10 +39,9 @@ echo '</div>
 	<tr>
 		<td width=200 valign=top>
 <div id=B2>';
-#require_once '../front/search.php';
-require_once '../front/artists.php';
-require_once '../front/subjects.php';
-require_once '../front/cat.php';
+left_display( "artist", "artist_ls", "", "artist_name", "Artist" );
+left_display( "subject", "sub_ls", "", "sub_name", "Subject" );
+left_display( "cat", "cat_ls", "cat_id", "cat_name", "Brand" );
 require_once '../front/addfav.php';
 require_once '../front/copyright.php';
 echo '</div>
